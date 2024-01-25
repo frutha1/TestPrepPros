@@ -2,6 +2,39 @@
     border-radius:5px;
 }
 
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@keyframes logo{
+    0%{
+        opacity: 0;
+        transform: translatey(-1em);
+    }
+    100%{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes words{
+    0%{
+        opacity: 0;
+        transform: translateX(1em);
+    }
+    50%{
+        opacity: .5;
+        transform: translateY(.1em);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 audio{
     max-width: 100%;
 }
@@ -44,6 +77,7 @@ header{
     grid-area:headerpic;
     padding:5px;
     height:10vmax;
+    animation: logo .5s;
 }
 
 .headertext{
@@ -63,15 +97,16 @@ header{
 header h1{
     font-size:5vw;
     color:#ffffff;
-    font-family:Impact;
     text-shadow: 2px 2px 5px #3217ff;
     margin: 0;
+    animation: words 1.5s;
 }
 
 header h3{
     font-size:3vw;
     color:#ffffff;
     margin:0;
+    animation: words 2s;
 }
 
 nav{
@@ -235,6 +270,11 @@ figure img{
     margin-top:16px;
     max-width:20em;
     border:2px solid #0000b0;
+    transition: all .5s ease-in-out;
+}
+
+figure img:hover{
+    transform: scale(1.1);
 }
 
 .fig2{
